@@ -17,10 +17,12 @@ public class NaukariSteps {
     public void userLandsOnNaukariLoginPageUsing(String arg0) {
         naukariPage = new NaukariPage(driver);
         naukariPage.userNavigateToGivenUrl(arg0);
+        naukariPage.userLoginAndLandOnHomePage();
     }
 
     @When("User update the summary")
     public void userUpdateTheSummary() {
+        naukariPage.userUpdateProfile();
     }
 
     @And("Upload a new resume")
