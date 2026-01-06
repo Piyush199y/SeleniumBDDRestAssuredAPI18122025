@@ -26,6 +26,7 @@ public class NaukariPage {
     private static By deleteResButton = By.xpath("//span[@data-title='delete-resume']");
     private static By deleteConfirm = By.xpath("//p[contains(text(),'delete the resume')]/../div/button[text()='Delete']");
     private static By uploadResumeInput = By.id("attachCV");
+    private static By resumeHeadline = By.id("resumeHeadlineTxt");
     private static By editResume = By.xpath("//span[contains(text(),'headline')]/following-sibling::span[text()='editOneTheme']");
 
     public NaukariPage(WebDriver driver){
@@ -87,6 +88,7 @@ public class NaukariPage {
         z.click();
 
         WebElement resumeHeadline = driver.findElement(By.id("resumeHeadlineTxt"));
+        wait.until(ExpectedConditions.elementToBeClickable(resumeHeadline));
         String existingText = resumeHeadline.getAttribute("value");
         System.out.println("Current length: " + existingText.length());
 
