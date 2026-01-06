@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import org.piyush.pages.NaukariPage;
 
 public class NaukariSteps {
-
     public NaukariPage naukariPage;
 
     @Given("User lands on naukari login page using {string}")

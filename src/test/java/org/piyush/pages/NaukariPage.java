@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.piyush.driver.DriverManager;
 import org.piyush.utils.ConfigReader;
-import org.piyush.utils.Helper;
 
 public class NaukariPage {
 
-    public Helper helper;
     private WebDriver driver;
     private static By userNameInput = By.xpath("//input[@id='usernameField']");
     private static By passwordInput = By.xpath("//input[@id='passwordField']");
@@ -21,12 +19,21 @@ public class NaukariPage {
     public void userNavigateToGivenUrl(String url){
         ConfigReader.loadConfig();
         String inputUrl = ConfigReader.get(url);
-        helper.navigateToUrl(inputUrl);
+
+        if (inputUrl == null || inputUrl.trim().isEmpty()) {
+            throw new IllegalArgumentException("URL cannot be null or empty");
+        }
+
+        if (!inputUrl.startsWith("http://") && !inputUrl.startsWith("https://")) {
+            inputUrl = "https://" + inputUrl;
+        }
+
+        driver.get(inputUrl);
+
     }
 
     public void userLoginAndLandOnHomePage(){
         String url = ConfigReader.get("NaukariUrl");
-        helper.navigateToUrl(url);
     }
 
 }
