@@ -45,9 +45,12 @@ public class Hooks {
     public void setUp() {
         ConfigReader.loadConfig();
         String browserName = ConfigReader.get("browser");
+        System.out.println("Browser name = " + browserName);
         WebDriver driver = BrowserFactory.createDriver(browserName);
+        System.out.println("HOOK DRIVER = " + driver);
 
         DriverManager.setDriver(driver);
+
     }
 
 //    @After

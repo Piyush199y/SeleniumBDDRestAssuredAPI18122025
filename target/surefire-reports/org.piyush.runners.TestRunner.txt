@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.piyush.runners.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.941 s -- in org.piyush.runners.TestRunner
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.97 s -- in org.piyush.runners.TestRunner

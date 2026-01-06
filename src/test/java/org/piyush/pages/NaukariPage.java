@@ -12,7 +12,7 @@ public class NaukariPage {
     private static By passwordInput = By.xpath("//input[@id='passwordField']");
     private static By loginButton = By.xpath("//button[text()='Login']");
 
-    public NaukariPage(){
+    public NaukariPage(WebDriver driver){
         this.driver = DriverManager.getDriver();
     }
 
