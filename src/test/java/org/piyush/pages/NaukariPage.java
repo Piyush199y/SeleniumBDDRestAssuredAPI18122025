@@ -85,6 +85,7 @@ public class NaukariPage {
 
         WebElement z = driver.findElement(editResume);
         actions.moveToElement(z);
+        wait.until(ExpectedConditions.elementToBeClickable(editResume));
         z.click();
 
         WebElement resumeHeadline = driver.findElement(By.id("resumeHeadlineTxt"));
@@ -106,16 +107,26 @@ public class NaukariPage {
         }
 
         driver.findElement(By.xpath("//button[text()='Save']")).click();
-
     }
 
     public static void scrollToElement(WebDriver driver, By by) {
 
         WebElement element = driver.findElement(by);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        //js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});",element);
         System.out.println("Scrolling is success to : " + element.getText());
     }
+
+//    public static void scrollToElement(WebDriver driver, WebElement element) {
+//
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript(
+//                "arguments[0].scrollIntoView({block: 'center'});",
+//                element
+//        );
+//    }
+
 
 
 }
