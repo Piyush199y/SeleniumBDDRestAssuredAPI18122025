@@ -1,7 +1,7 @@
 org\piyush\requests\UserApi.class
+org\piyush\runners\CucumberTestRunner.class
 org\piyush\stepdefinations\LoginSteps.class
 org\piyush\browser\ChromeBrowser.class
-org\piyush\runners\TestRunner.class
 org\piyush\requests\FakeStoreApi.class
 org\piyush\utils\ConfigReader.class
 org\piyush\driver\DriverManager.class

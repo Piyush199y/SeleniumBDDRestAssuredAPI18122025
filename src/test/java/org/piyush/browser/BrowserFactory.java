@@ -3,6 +3,7 @@ package org.piyush.browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
@@ -25,7 +26,7 @@ public class BrowserFactory {
         }
     }
 
-        public static WebDriver createDriver(String browser) {
+        public static WebDriver createDriver(String browser, ChromeOptions options) {
 
             WebDriver driver;
 
@@ -38,7 +39,7 @@ public class BrowserFactory {
                 case "chrome":
                 default:
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(options);
                     break;
             }
 

@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.piyush.browser.Browser;
 import org.piyush.browser.BrowserFactory;
@@ -46,7 +47,10 @@ public class Hooks {
         ConfigReader.loadConfig();
         String browserName = ConfigReader.get("browser");
         System.out.println("Browser name = " + browserName);
-        WebDriver driver = BrowserFactory.createDriver(browserName);
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        WebDriver driver = BrowserFactory.createDriver(browserName, options);
         System.out.println("HOOK DRIVER = " + driver);
 
         DriverManager.setDriver(driver);
@@ -63,7 +67,7 @@ public class Hooks {
 
     @After
     public void tearDown() {
-        DriverManager.quitDriver();
+        DriverManager.unload();
     }
 
 }
