@@ -84,9 +84,13 @@ public class NaukariPage {
         uploadElement.sendKeys("C:\\Users\\piyus\\SeleniumBDDRestAssuredAPI18122025\\src\\test\\resources\\Piyush_Bansod_Resume.pdf");
 
         WebElement z = driver.findElement(editResume);
-        actions.moveToElement(z);
-        wait.until(ExpectedConditions.elementToBeClickable(editResume));
-        z.click();
+        //actions.moveToElement(z);
+        z = wait.until(ExpectedConditions.presenceOfElementLocated(editResume));
+        scrollToElement(driver, editResume);
+        wait.until(ExpectedConditions.elementToBeClickable(z));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", z);
+        //z.click();
 
         WebElement resumeHeadline = driver.findElement(By.id("resumeHeadlineTxt"));
         wait.until(ExpectedConditions.elementToBeClickable(resumeHeadline));
