@@ -28,6 +28,7 @@ public class NaukariPage {
     private static By uploadResumeInput = By.id("attachCV");
     private static By resumeHeadline = By.id("resumeHeadlineTxt");
     private static By editResume = By.xpath("//span[contains(text(),'headline')]/following-sibling::span[text()='editOneTheme']");
+    private static By saveButton = By.xpath("//button[text()='Save']");
 
     public NaukariPage(WebDriver driver){
         this.driver = DriverManager.getDriver();
@@ -110,7 +111,11 @@ public class NaukariPage {
             resumeHeadline.sendKeys(existingText);
         }
 
-        driver.findElement(By.xpath("//button[text()='Save']")).click();
+        WebElement saveBtn = wait.until(ExpectedConditions.presenceOfElementLocated(saveButton));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});",saveBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(saveBtn));
+        js.executeScript("arguments[0].click();", saveBtn);
+//        driver.findElement(By.xpath("//button[text()='Save']")).click();
     }
 
     public static void scrollToElement(WebDriver driver, By by) {
