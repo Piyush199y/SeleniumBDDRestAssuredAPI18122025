@@ -45,7 +45,6 @@ public class Hooks {
     public void setUp() {
         ConfigReader.loadConfig();
         String browserName = ConfigReader.get("browser");
-
         WebDriver driver = BrowserFactory.createDriver(browserName);
 
         DriverManager.setDriver(driver);

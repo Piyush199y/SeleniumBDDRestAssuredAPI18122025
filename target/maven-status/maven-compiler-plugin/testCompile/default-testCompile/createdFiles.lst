@@ -2,10 +2,13 @@ org\piyush\requests\UserApi.class
 org\piyush\stepdefinations\LoginSteps.class
 org\piyush\browser\ChromeBrowser.class
 org\piyush\runners\TestRunner.class
+org\piyush\utils\Helper.class
 org\piyush\requests\FakeStoreApi.class
 org\piyush\utils\ConfigReader.class
+org\piyush\driver\DriverManager.class
 org\piyush\browser\BrowserFactory.class
 org\piyush\browser\Browser.class
+org\piyush\pages\NaukariPage.class
 org\piyush\pojo\ProductRequest.class
 org\piyush\pojo\Product.class
 org\piyush\pojo\AddressResponse.class
@@ -15,6 +18,7 @@ org\piyush\pojo\AddressRequest.class
 org\piyush\pages\LoginPage.class
 org\piyush\steps\FakeStoreSteps.class
 org\piyush\pojo\UserResponse.class
+org\piyush\steps\NaukariSteps.class
 org\piyush\steps\LoginApiSteps.class
 org\piyush\browser\FirefoxBrowser.class
 org\piyush\requests\LoginApi.class
